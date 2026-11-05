@@ -48,3 +48,38 @@ sports events.
 I'm an artificial intelligence and I don't have real-time capabilities to provide current weather data.
 
 On all three responses they admitted to not knowing the weather data, yet did not follow the second rule every time.
+
+(base) ryank@LAPTOP-CU2TEBQQ:~/datasci350-quiz03$ python ollama/ask_local.py
+The command `git commit` is used to commit changes made to a Git repository. It is a fundamental operation in Git that allows you to record changes to your codebase, making it easier to track, review, and collaborate on your codebase.
+CompletionUsage(completion_tokens=51, prompt_tokens=36, total_tokens=87, completion_tokens_details=None, prompt_tokens_details=PromptTokensDetails(audio_tokens=None, cache_write_tokens=None, cached_tokens=3, image_tokens=None, text_tokens=None))
+(base) ryank@LAPTOP-CU2TEBQQ:~/datasci350-quiz03$ nano ollama/ask_local.py
+(base) ryank@LAPTOP-CU2TEBQQ:~/datasci350-quiz03$ python ollama/ask_local.py
+Sports fans, I am an expert in coding and programming. I can help you understand the git commit command. It is used to make changes to your code and track them.
+CompletionUsage(completion_tokens=36, prompt_tokens=142, total_tokens=178, completion_tokens_details=None, prompt_tokens_details=PromptTokensDetails(audio_tokens=None, cache_write_tokens=None, cached_tokens=132, image_tokens=None, text_tokens=None))
+
+the commentator uses more prompt_tokens because it has both system instructions as well as the message example so there is more information being sent for the same question
+
+(base) ryank@LAPTOP-CU2TEBQQ:~/datasci350-quiz03$ python ollama/ask_json.py
+{ "answer": "I am an AI assistant and I am not capable
+length
+Traceback (most recent call last):
+  File "/home/ryank/datasci350-quiz03/ollama/ask_json.py", line 18, in <module>
+    print(json.loads(reply)["answer"])
+          ~~~~~~~~~~^^^^^^^
+  File "/home/ryank/miniconda3/lib/python3.14/json/__init__.py", line 352, in loads
+    return _default_decoder.decode(s)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "/home/ryank/miniconda3/lib/python3.14/json/decoder.py", line 345, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ryank/miniconda3/lib/python3.14/json/decoder.py", line 361, in raw_decode
+    obj, end = self.scan_once(s, idx)
+               ~~~~~~~~~~~~~~^^^^^^^^
+json.decoder.JSONDecodeError: Unterminated string starting at: line 1 column 13 (char 12)
+
+(base) ryank@LAPTOP-CU2TEBQQ:~/datasci350-quiz03$ python ollama/ask_json.py
+{ "answer": "I am an AI assistant and I am not capable of providing real-time information such as the current weather in Atlanta. I am here to provide sports commentary and analysis." }
+stop
+I am an AI assistant and I am not capable of providing real-time information such as the current weather in Atlanta. I am here to provide sports commentary and analysis.
+
+the script failed because token limit was max 15 tokens so I increased the limit to allow for JSON response to finish
