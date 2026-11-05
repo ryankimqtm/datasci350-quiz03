@@ -130,3 +130,6 @@ sudo apt install -y python3-pandas python3-matplotlib python3-seaborn
 When you stop an EC2 instance instead of terminating it, you still have to pay for the disk storage even though you're no longer paying for compute charge.
 
 Used CHAT-GPT to help write out the rules for the commentator.
+example : can u help me write three rules for ollama chatbot? i want it to to act like an excited sports commentator, keep its answers to four sentences or fewer, always call the user "sports fans," and admit when it doesn't know something instead of making up an answer.
+no commands
+
